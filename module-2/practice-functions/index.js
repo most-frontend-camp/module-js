@@ -1,28 +1,17 @@
-function keyboardMistakes(string) {
-    let string2 = '';
-    for (const char of string) {
-        if(char === '5') {
-            string2 += 'S'
-        } else if (char === '4') {
-            string2 += 'A'
-        } else if (char === '0') {
-            string2 += 'O'
-        } else if (char === '1') {
-            string2 += 'I'
-        } else {
-            string2 += char;
-        }
-    }
-    return string2;
+function basicCalculator(a, operation, b) {
+if (operation === '+') return a + b;
+  if (operation === '-') return a - b;
+  if (operation === '*') return a * b;
+  if (operation === 'x') return null;
+  if (operation === '/') return b ===0 ? null : a/b;
+//   if (operation === '/') return b === 0 ? "Can't divide by 0!" : a / b;
 }
-/*
-    A is misinterpreted as 4
-    S is misinterpreted as 5
-    O is misinterpreted as 0
-    I is misinterpreted as 1
-*/
-console.log(keyboardMistakes("MUB45H1R")) // "MUBASHIR"
 
-console.log(keyboardMistakes("DUBL1N")) // "DUBLIN"
-
-console.log(keyboardMistakes("51NG4P0RE")) // "SINGAPORE"
+console.log(basicCalculator(2, '+', 4)) // 6
+console.log(basicCalculator(6, '-', 5)) // 1
+console.log(basicCalculator(12, '/', 3)) // 4
+console.log(basicCalculator(3, '*', 4)) // 12
+console.log(basicCalculator(1, '/', 0)) // null
+// Division by zero is not possible
+console.log(basicCalculator(1, 'x', 0)) // null
+// 'x' is not an operator
