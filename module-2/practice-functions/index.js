@@ -1,17 +1,25 @@
-function basicCalculator(a, operation, b) {
-if (operation === '+') return a + b;
-  if (operation === '-') return a - b;
-  if (operation === '*') return a * b;
-  if (operation === 'x') return null;
-  if (operation === '/') return b ===0 ? null : a/b;
-//   if (operation === '/') return b === 0 ? "Can't divide by 0!" : a / b;
+function min(){
+    if (arguments.length === 0) {
+        return null;
+    }
+
+    let minValue = arguments[0]; // Initialize minValue with the first argument
+
+    // Iterate through all arguments to find the minimum value
+    for (let i = 1; i < arguments.length; i++) {
+        if (arguments[i] < minValue) {
+            minValue = arguments[i];
+        }
+    }
+
+    return minValue;
 }
 
-console.log(basicCalculator(2, '+', 4)) // 6
-console.log(basicCalculator(6, '-', 5)) // 1
-console.log(basicCalculator(12, '/', 3)) // 4
-console.log(basicCalculator(3, '*', 4)) // 12
-console.log(basicCalculator(1, '/', 0)) // null
-// Division by zero is not possible
-console.log(basicCalculator(1, 'x', 0)) // null
-// 'x' is not an operator
+
+console.log(min()) // null
+
+console.log(min(1, 2, 3)) // 1
+
+console.log(min(3, 2, 1)) // 1
+
+console.log(min(123, 132, 213, 231, 312, 321)) // 123
