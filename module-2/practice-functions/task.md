@@ -240,4 +240,22 @@ function sum(target){
     }
     return sum;
 }
+
+// recursive way
+function sum(n){
+    if (n === 1) {
+        return 1;
+    }
+    return n + sum(n-1)
+}
+// another example with recursion
+function factorial(n){
+    if(n === 1) {
+        return 1;
+    }    
+    if(n === 2) {
+        return 2;
+    } 
+    return n*factorial(n-1)
+}
 ```
