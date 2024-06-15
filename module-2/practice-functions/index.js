@@ -1,11 +1,19 @@
 function keyboardMistakes(string) {
-    let errors = {'4':'A', '5': 'S','0':'O', '1': 'I'};
-    for (const char in string) {
-        if(char in errors){
-            string = string.replace(char, errors[char])
+    let string2 = '';
+    for (const char of string) {
+        if(char === '5') {
+            string2 += 'S'
+        } else if (char === '4') {
+            string2 += 'A'
+        } else if (char === '0') {
+            string2 += 'O'
+        } else if (char === '1') {
+            string2 += 'I'
+        } else {
+            string2 += char;
         }
     }
-    return string;
+    return string2;
 }
 /*
     A is misinterpreted as 4
